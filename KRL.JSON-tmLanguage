@@ -1,0 +1,358 @@
+// [PackageDev] target_format: plist, ext: tmLanguage
+{
+	"name": "KRL (Kinetic Rule Language)",
+	"scopeName": "source.krl",
+	"fileTypes": ["krl"],
+	"uuid": "fc2e9679-a431-4503-a18c-9d4f53a72830",
+
+	"repository": {
+		"comment": {
+			"patterns": [
+				{
+					"name": "comment.line.krl",
+					"match": "\/\/.*\\n"
+				}
+			]
+		},
+		"numericConstant": {
+			"patterns": [
+				{
+					"name": "constant.numeric.krl",
+					"match": " \\d+"
+				}
+			]
+		},
+		"angleQuotedString": {
+			"patterns": [
+				{
+					"name": "string.quoted.angle.krl",
+					"begin": "<<",
+					"end": ">>"
+				}
+			]
+		},
+		"quotedString": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.krl",
+					"begin": "\"",
+					"end": "\""
+				},
+				{
+					"name": "string.quoted.single.krl",
+					"begin": "'",
+					"end": "'"
+				},
+				{
+					"name": "string.regexp.classic.krl",
+					"match": "re/.*/"
+				}
+			]
+		},
+		"metaKeywords": {
+			"patterns": [
+				{
+					"name": "keyword.meta.krl",
+					"match": "\\b(name|author|description|logging|sharing|use|provide|configure|key)\\b"
+				}
+			]
+		},
+		"metaConstants": {
+			"patterns": [
+				{
+					"name": "constant.other.meta.krl",
+					"match": "\\b(on|off)\\b"
+				}
+			]
+		},
+		"dispatchKeywords": {
+			"patterns": [
+				{
+					"name": "keyword.dispatch.krl",
+					"match": "\\bdomain\\b"
+				}
+			]
+		},
+		"globalKeywords": {
+			"patterns": [
+				{
+					"name": "keyword.global.krl",
+					"match": "\\b(dataset|datasource|cachable|for)\\b"
+				}
+			]
+		},
+		"globalConstants": {
+			"patterns": [
+				{
+					"name": "constant.other.global.krl",
+					"match": "\\b(year|month|week|day|hour|minute|second)s\\b"
+				}
+			]
+		},
+		"eventexKeywords": {
+			"patterns": [
+				{
+					"name": "keyword.eventex.krl",
+					"match": "\\b(select|when|setting)\\b"
+				}
+			]
+		},
+		"eventexConstants": {
+			"patterns": [
+				{
+					"name": "constant.other.eventex.krl",
+					"match": "\\b(pageview|true|false|ent:|app:|page:)\\b"
+				}
+			]
+		},
+		"formatConstants": {
+			"patterns": [
+				{
+					"name": "constant.other.format.krl",
+					"match": ":(JSON|XML|RSS)\\b"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "support.function.krl",
+					"match": "\\b(extract|notify|match|head)\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.krl",
+					"match": "\\b(with|neq|eq)\\b"
+				}
+			]
+		},
+		"postludeKeywords": {
+			"patterns": [
+				{
+					"name": "keyword.postlude.krl",
+					"match": "\\b(set)\\b"
+				}
+			]
+		}
+	},
+
+	"patterns": [
+		{
+			"include": "#comment"
+		},
+		{
+			"name": "block.ruleset.krl",
+			"begin": "\\b(ruleset)\\b\\s\\b([A-z_][A-z0-9_]*)|([0-9]*)\\b\\s\\{",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.krl"
+				},
+				"2": {
+					"name": "entity.name.ruleset.krl"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#comment"
+				},
+				{
+					"name": "block.meta.krl",
+					"begin": "\\b(meta)\\b\\s\\{",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.krl"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#comment"
+						},
+						{
+							"include": "#angleQuotedString"
+						},
+						{
+							"include": "#quotedString"
+						},
+						{
+							"include": "#metaKeywords"
+						},
+						{
+							"include": "#metaConstants"
+						}
+					],
+					"end": "\\}"
+				},
+				{
+					"name": "block.dispatch.krl",
+					"begin": "\\b(dispatch)\\b\\s\\{",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.krl"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#comment"
+						},
+						{
+							"include": "#quotedString"
+						},
+						{
+							"include": "#dispatchKeywords"
+						}
+					],
+					"end": "\\}"
+				},
+				{
+					"name": "block.global.krl",
+					"begin": "\\b(global)\\b\\s\\{",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.krl"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#comment"
+						},
+						{
+							"include": "#numericConstant"
+						},
+						{
+							"include": "#quotedString"
+						},
+						{
+							"include": "#globalKeywords"
+						},
+						{
+							"include": "#globalConstants"
+						},
+						{
+							"include": "#formatConstants"
+						}
+					],
+					"end": "\\}"
+				},
+				{
+					"name": "block.rule.krl",
+					"begin": "\\b(rule)\\b\\s([A-z0-9_]+)\\s\\{",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.krl"
+						},
+						"2": {
+							"name": "entity.name.rule.krl"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#comment"
+						},
+						{
+							"include": "#quotedString"
+						},
+						{
+							"include": "#eventexKeywords"
+						},
+						{
+							"include": "#eventexConstants"
+						},
+						{
+							"include": "#functions"
+						},
+						{
+							"include": "#operators"
+						},
+						{
+							"include": "#formatConstants"
+						},
+						{
+							"name": "block.rule.pre.krl",
+							"begin": "\\b(pre)\\b\\s\\{",
+							"beginCaptures": {
+								"1": {
+									"name": "keyword.krl"
+								}
+							},
+							"patterns": [
+								{
+									"name": "block.rule.pre.function.krl",
+									"begin": "\\b[A-z0-9_]+\\b\\s=\\s(function)\\s*\\(.*\\)\\s\\{",
+									"beginCaptures": {
+										"1": {
+											"name": "storage.type.function.krl"
+										}
+									},
+									"patterns": [
+										{
+											"include": "#functions"
+										},
+										{
+											"include": "#operators"
+										}
+									],
+									"end": "\\}"
+								}
+							],
+							"end": "\\}"
+						},
+						{
+							"name": "block.rule.if.krl",
+							"begin": "\\b(if)\\b\\s.*\\s(then)\\s\\{",
+							"beginCaptures": {
+								"1": {
+									"name": "keyword.krl"
+								},
+								"2": {
+									"name": "keyword.krl"
+								}
+							},
+							"patterns": [
+								{
+									"include": "#numericConstant"
+								},
+								{
+									"include": "#quotedString"
+								},
+								{
+									"include": "#functions"
+								},
+								{
+									"include": "#operators"
+								}
+							],
+							"end": "\\}"
+						},
+						{
+							"name": "block.rule.postlude.krl",
+							"begin": "\\b(always|fired|notfired|else)\\b",
+							"beginCaptures": {
+								"1": {
+									"name": "keyword.krl"
+								}
+							},
+							"patterns": [
+								{
+									"include": "#numericConstant"
+								},
+								{
+									"include": "#postludeKeywords"
+								}
+							],
+							"end": "\\}"
+						}
+					],
+					"end": "\\}"
+				}
+			],
+			"end": "\\}"
+		},
+		{
+			"name": "constant.other.krl",
+			"match": "\\b(ent:|app:|page:|datasource:|dataset:|pageview)\\b"
+		}
+  	]
+}
