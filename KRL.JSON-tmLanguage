@@ -11,113 +11,51 @@
 				{
 					"name": "comment.line.krl",
 					"match": "\/\/.*\\n"
-				}
-			]
+                },
+				{
+					"name": "comment.multiline.krl",
+					"begin": "\/\\*",
+					"end": "\\*\/"
+                }
+            ]
 		},
-		"numericConstant": {
+		"keywords": {
 			"patterns": [
+				{
+					"name": "keyword.krl",
+					"match": "\\b(_api|_rids|alias|always|and|at|author|authz|between|cachable|cacheable|callbacks|choose|clear|configure|configure|css|current|dataset|datasource|defaction|description|dispatch|domain|else|emit|every|extract|failure|fired|for|foreach|forget|from|function|global|history|if|iframe|key|like|logging|mark|match|meta|module|name|not|notfired|null|on|or|pageview|pre|provide|provides|raise|replace|require|rule|ruleset|schedule|seen|select|set|setting|sharing|success|then|use|using|version|web|when|where|with|within)\\b"
+                }
+            ]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.language.krl",
+					"match": "\\b(true|false|on|off|ent|app|page|event)\\b"
+                },
+				{
+					"name": "constant.language.krl",
+					"match": "\\b(year|month|week|day|hour|minute|second)s?\\b"
+                },
+				{
+					"name": "constant.language.krl",
+					"match": "\\b(JSON|RSS|XML|HTML)\\b"
+                },
 				{
 					"name": "constant.numeric.krl",
 					"match": " \\d+"
-				}
-			]
-		},
-		"angleQuotedString": {
-			"patterns": [
-				{
-					"name": "string.quoted.angle.krl",
-					"begin": "<<",
-					"end": ">>"
-				}
-			]
-		},
-		"quotedString": {
-			"patterns": [
-				{
-					"name": "string.quoted.double.krl",
-					"begin": "\"",
-					"end": "\""
-				},
-				{
-					"name": "string.quoted.single.krl",
-					"begin": "'",
-					"end": "'"
-				},
-				{
-					"name": "string.regexp.classic.krl",
-					"match": "re/.*/"
-				}
-			]
-		},
-		"metaKeywords": {
-			"patterns": [
-				{
-					"name": "keyword.meta.krl",
-					"match": "\\b(name|author|description|logging|sharing|use|provide|configure|key)\\b"
-				}
-			]
-		},
-		"metaConstants": {
-			"patterns": [
-				{
-					"name": "constant.other.meta.krl",
-					"match": "\\b(on|off)\\b"
-				}
-			]
-		},
-		"dispatchKeywords": {
-			"patterns": [
-				{
-					"name": "keyword.dispatch.krl",
-					"match": "\\bdomain\\b"
-				}
-			]
-		},
-		"globalKeywords": {
-			"patterns": [
-				{
-					"name": "keyword.global.krl",
-					"match": "\\b(dataset|datasource|cachable|for)\\b"
-				}
-			]
-		},
-		"globalConstants": {
-			"patterns": [
-				{
-					"name": "constant.other.global.krl",
-					"match": "\\b(year|month|week|day|hour|minute|second)s\\b"
-				}
-			]
-		},
-		"eventexKeywords": {
-			"patterns": [
-				{
-					"name": "keyword.eventex.krl",
-					"match": "\\b(select|when|setting)\\b"
-				}
-			]
-		},
-		"eventexConstants": {
-			"patterns": [
-				{
-					"name": "constant.other.eventex.krl",
-					"match": "\\b(pageview|true|false|ent:|app:|page:)\\b"
-				}
-			]
-		},
-		"formatConstants": {
-			"patterns": [
-				{
-					"name": "constant.other.format.krl",
-					"match": ":(JSON|XML|RSS)\\b"
-				}
-			]
+                }
+            ]
 		},
 		"functions": {
 			"patterns": [
 				{
 					"name": "support.function.krl",
-					"match": "\\b(extract|notify|match|head)\\b"
+					"match": "\\b(all|any|append|as|avg|capitalize|collect|decode|delete|difference|duplicates|encode|filter|has|head|index|intersection|isnull|join|keys|klog|lc|length|map|max|min|none|notall|once|pairwise|pick|push|put|query|range|reduce|reverse|slice|sort|splice|split|sprintf|substr|sum|tail|trim|typeof|uc|union|unique|values)\\b"
+				},
+				{
+					"name": "support.function.krl",
+					"match": "\\b(notify|watch)\\b"
 				}
 			]
 		},
@@ -125,15 +63,54 @@
 			"patterns": [
 				{
 					"name": "keyword.operator.krl",
-					"match": "\\b(with|neq|eq)\\b"
+					"match": "\\b(eq|neq|cmp)\\b"
 				}
 			]
 		},
-		"postludeKeywords": {
+		"string": {
 			"patterns": [
 				{
-					"name": "keyword.postlude.krl",
-					"match": "\\b(set)\\b"
+					"name": "string.quoted.single.krl",
+					"match": "'(\\\\'|[^'])*'"
+				},
+				{
+					"name": "string.quoted.double.krl",
+					"match": "\\\"(\\\\\"|[^\\\"])*\\\""
+				}
+			]
+		},
+		"regex": {
+			"patterns": [
+				{
+					"name": "string.regexp.krl",
+					"match": "\\bre\/.*\/[gim]{0,3}"
+				}
+			]
+		},
+		"html": {
+			"patterns": [
+				{
+					"name": "string.text.html.basic",
+					"begin": "<<",
+					"end": ">>"
+				}
+			]
+		},
+		"js": {
+			"patterns": [
+				{
+					"name": "source.js",
+					"begin": "<\\|",
+					"end": "\\|>"
+				}
+			]
+		},
+		"xdi": {
+			"patterns": [
+				{
+					"name": "source.xdi",
+					"begin": "<\\[",
+					"end": "\\]>"
 				}
 			]
 		}
@@ -144,215 +121,31 @@
 			"include": "#comment"
 		},
 		{
-			"name": "block.ruleset.krl",
-			"begin": "\\b(ruleset)\\b\\s\\b([A-z_][A-z0-9_]*)|([0-9]*)\\b\\s\\{",
-			"beginCaptures": {
-				"1": {
-					"name": "keyword.krl"
-				},
-				"2": {
-					"name": "entity.name.ruleset.krl"
-				}
-			},
-			"patterns": [
-				{
-					"include": "#comment"
-				},
-				{
-					"name": "block.meta.krl",
-					"begin": "\\b(meta)\\b\\s\\{",
-					"beginCaptures": {
-						"1": {
-							"name": "keyword.krl"
-						}
-					},
-					"patterns": [
-						{
-							"include": "#comment"
-						},
-						{
-							"include": "#angleQuotedString"
-						},
-						{
-							"include": "#quotedString"
-						},
-						{
-							"include": "#metaKeywords"
-						},
-						{
-							"include": "#metaConstants"
-						}
-					],
-					"end": "\\}"
-				},
-				{
-					"name": "block.dispatch.krl",
-					"begin": "\\b(dispatch)\\b\\s\\{",
-					"beginCaptures": {
-						"1": {
-							"name": "keyword.krl"
-						}
-					},
-					"patterns": [
-						{
-							"include": "#comment"
-						},
-						{
-							"include": "#quotedString"
-						},
-						{
-							"include": "#dispatchKeywords"
-						}
-					],
-					"end": "\\}"
-				},
-				{
-					"name": "block.global.krl",
-					"begin": "\\b(global)\\b\\s\\{",
-					"beginCaptures": {
-						"1": {
-							"name": "keyword.krl"
-						}
-					},
-					"patterns": [
-						{
-							"include": "#comment"
-						},
-						{
-							"include": "#numericConstant"
-						},
-						{
-							"include": "#quotedString"
-						},
-						{
-							"include": "#globalKeywords"
-						},
-						{
-							"include": "#globalConstants"
-						},
-						{
-							"include": "#formatConstants"
-						}
-					],
-					"end": "\\}"
-				},
-				{
-					"name": "block.rule.krl",
-					"begin": "\\b(rule)\\b\\s([A-z0-9_]+)\\s\\{",
-					"beginCaptures": {
-						"1": {
-							"name": "keyword.krl"
-						},
-						"2": {
-							"name": "entity.name.rule.krl"
-						}
-					},
-					"patterns": [
-						{
-							"include": "#comment"
-						},
-						{
-							"include": "#quotedString"
-						},
-						{
-							"include": "#eventexKeywords"
-						},
-						{
-							"include": "#eventexConstants"
-						},
-						{
-							"include": "#functions"
-						},
-						{
-							"include": "#operators"
-						},
-						{
-							"include": "#formatConstants"
-						},
-						{
-							"name": "block.rule.pre.krl",
-							"begin": "\\b(pre)\\b\\s\\{",
-							"beginCaptures": {
-								"1": {
-									"name": "keyword.krl"
-								}
-							},
-							"patterns": [
-								{
-									"name": "block.rule.pre.function.krl",
-									"begin": "\\b[A-z0-9_]+\\b\\s=\\s(function)\\s*\\(.*\\)\\s\\{",
-									"beginCaptures": {
-										"1": {
-											"name": "storage.type.function.krl"
-										}
-									},
-									"patterns": [
-										{
-											"include": "#functions"
-										},
-										{
-											"include": "#operators"
-										}
-									],
-									"end": "\\}"
-								}
-							],
-							"end": "\\}"
-						},
-						{
-							"name": "block.rule.if.krl",
-							"begin": "\\b(if)\\b\\s.*\\s(then)\\s\\{",
-							"beginCaptures": {
-								"1": {
-									"name": "keyword.krl"
-								},
-								"2": {
-									"name": "keyword.krl"
-								}
-							},
-							"patterns": [
-								{
-									"include": "#numericConstant"
-								},
-								{
-									"include": "#quotedString"
-								},
-								{
-									"include": "#functions"
-								},
-								{
-									"include": "#operators"
-								}
-							],
-							"end": "\\}"
-						},
-						{
-							"name": "block.rule.postlude.krl",
-							"begin": "\\b(always|fired|notfired|else)\\b",
-							"beginCaptures": {
-								"1": {
-									"name": "keyword.krl"
-								}
-							},
-							"patterns": [
-								{
-									"include": "#numericConstant"
-								},
-								{
-									"include": "#postludeKeywords"
-								}
-							],
-							"end": "\\}"
-						}
-					],
-					"end": "\\}"
-				}
-			],
-			"end": "\\}"
+			"include": "#keywords"
 		},
 		{
-			"name": "constant.other.krl",
-			"match": "\\b(ent:|app:|page:|datasource:|dataset:|pageview)\\b"
+			"include": "#constants"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#string"
+		},
+		{
+			"include": "#regex"
+		},
+		{
+			"include": "#html"
+		},
+		{
+			"include": "#js"
+		},
+		{
+			"include": "#xdi"
 		}
-  	]
+    ]
 }

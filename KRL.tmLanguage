@@ -15,334 +15,44 @@
 			<string>#comment</string>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>\b(ruleset)\b\s\b([A-z_][A-z0-9_]*)|([0-9]*)\b\s\{</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.krl</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.ruleset.krl</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>\}</string>
-			<key>name</key>
-			<string>block.ruleset.krl</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#comment</string>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>\b(meta)\b\s\{</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.krl</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\}</string>
-					<key>name</key>
-					<string>block.meta.krl</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#comment</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#angleQuotedString</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#quotedString</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#metaKeywords</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#metaConstants</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>\b(dispatch)\b\s\{</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.krl</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\}</string>
-					<key>name</key>
-					<string>block.dispatch.krl</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#comment</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#quotedString</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#dispatchKeywords</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>\b(global)\b\s\{</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.krl</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\}</string>
-					<key>name</key>
-					<string>block.global.krl</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#comment</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#numericConstant</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#quotedString</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#globalKeywords</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#globalConstants</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#formatConstants</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>\b(rule)\b\s([A-z0-9_]+)\s\{</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.krl</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.rule.krl</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\}</string>
-					<key>name</key>
-					<string>block.rule.krl</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#comment</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#quotedString</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#eventexKeywords</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#eventexConstants</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#functions</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#operators</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#formatConstants</string>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>\b(pre)\b\s\{</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>keyword.krl</string>
-								</dict>
-							</dict>
-							<key>end</key>
-							<string>\}</string>
-							<key>name</key>
-							<string>block.rule.pre.krl</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>begin</key>
-									<string>\b[A-z0-9_]+\b\s=\s(function)\s*\(.*\)\s\{</string>
-									<key>beginCaptures</key>
-									<dict>
-										<key>1</key>
-										<dict>
-											<key>name</key>
-											<string>storage.type.function.krl</string>
-										</dict>
-									</dict>
-									<key>end</key>
-									<string>\}</string>
-									<key>name</key>
-									<string>block.rule.pre.function.krl</string>
-									<key>patterns</key>
-									<array>
-										<dict>
-											<key>include</key>
-											<string>#functions</string>
-										</dict>
-										<dict>
-											<key>include</key>
-											<string>#operators</string>
-										</dict>
-									</array>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>\b(if)\b\s.*\s(then)\s\{</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>keyword.krl</string>
-								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>keyword.krl</string>
-								</dict>
-							</dict>
-							<key>end</key>
-							<string>\}</string>
-							<key>name</key>
-							<string>block.rule.if.krl</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#numericConstant</string>
-								</dict>
-								<dict>
-									<key>include</key>
-									<string>#quotedString</string>
-								</dict>
-								<dict>
-									<key>include</key>
-									<string>#functions</string>
-								</dict>
-								<dict>
-									<key>include</key>
-									<string>#operators</string>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>\b(always|fired|notfired|else)\b</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>keyword.krl</string>
-								</dict>
-							</dict>
-							<key>end</key>
-							<string>\}</string>
-							<key>name</key>
-							<string>block.rule.postlude.krl</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#numericConstant</string>
-								</dict>
-								<dict>
-									<key>include</key>
-									<string>#postludeKeywords</string>
-								</dict>
-							</array>
-						</dict>
-					</array>
-				</dict>
-			</array>
+			<key>include</key>
+			<string>#keywords</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>\b(ent:|app:|page:|datasource:|dataset:)\b</string>
-			<key>name</key>
-			<string>constant.other.krl</string>
+			<key>include</key>
+			<string>#constants</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#functions</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#operators</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#string</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#regex</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#html</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#js</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#xdi</string>
 		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
-		<key>angleQuotedString</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>&lt;&lt;</string>
-					<key>end</key>
-					<string>&gt;&gt;</string>
-					<key>name</key>
-					<string>string.quoted.angle.krl</string>
-				</dict>
-			</array>
-		</dict>
 		<key>comment</key>
 		<dict>
 			<key>patterns</key>
@@ -353,53 +63,43 @@
 					<key>name</key>
 					<string>comment.line.krl</string>
 				</dict>
-			</array>
-		</dict>
-		<key>dispatchKeywords</key>
-		<dict>
-			<key>patterns</key>
-			<array>
 				<dict>
-					<key>match</key>
-					<string>\bdomain\b</string>
+					<key>begin</key>
+					<string>/\*</string>
+					<key>end</key>
+					<string>\*/</string>
 					<key>name</key>
-					<string>keyword.dispatch.krl</string>
+					<string>comment.multiline.krl</string>
 				</dict>
 			</array>
 		</dict>
-		<key>eventexConstants</key>
+		<key>constants</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(true|false|ent:|app:|page:)\b</string>
+					<string>\b(true|false|on|off|ent|app|page|event)\b</string>
 					<key>name</key>
-					<string>constant.other.eventex.krl</string>
+					<string>constant.language.krl</string>
 				</dict>
-			</array>
-		</dict>
-		<key>eventexKeywords</key>
-		<dict>
-			<key>patterns</key>
-			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(select|when|setting)\b</string>
+					<string>\b(year|month|week|day|hour|minute|second)s?\b</string>
 					<key>name</key>
-					<string>keyword.eventex.krl</string>
+					<string>constant.language.krl</string>
 				</dict>
-			</array>
-		</dict>
-		<key>formatConstants</key>
-		<dict>
-			<key>patterns</key>
-			<array>
 				<dict>
 					<key>match</key>
-					<string>:(JSON|XML|RSS)\b</string>
+					<string>\b(JSON|RSS|XML|HTML)\b</string>
 					<key>name</key>
-					<string>constant.other.format.krl</string>
+					<string>constant.language.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string> \d+</string>
+					<key>name</key>
+					<string>constant.numeric.krl</string>
 				</dict>
 			</array>
 		</dict>
@@ -409,69 +109,55 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(extract|notify|match|head)\b</string>
+					<string>\b(all|any|append|as|avg|capitalize|collect|decode|delete|difference|duplicates|encode|filter|has|head|index|intersection|isnull|join|keys|klog|lc|length|map|max|min|none|notall|once|pairwise|pick|push|put|query|range|reduce|reverse|slice|sort|splice|split|sprintf|substr|sum|tail|trim|typeof|uc|union|unique|values)\b</string>
+					<key>name</key>
+					<string>support.function.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(notify|watch)\b</string>
 					<key>name</key>
 					<string>support.function.krl</string>
 				</dict>
 			</array>
 		</dict>
-		<key>globalConstants</key>
+		<key>html</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>match</key>
-					<string>\b(year|month|week|day|hour|minute|second)s\b</string>
+					<key>begin</key>
+					<string>&lt;&lt;</string>
+					<key>end</key>
+					<string>&gt;&gt;</string>
 					<key>name</key>
-					<string>constant.other.global.krl</string>
+					<string>string.text.html.basic</string>
 				</dict>
 			</array>
 		</dict>
-		<key>globalKeywords</key>
+		<key>js</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>match</key>
-					<string>\b(dataset|datasource|cachable|for)\b</string>
+					<key>begin</key>
+					<string>&lt;\|</string>
+					<key>end</key>
+					<string>\|&gt;</string>
 					<key>name</key>
-					<string>keyword.global.krl</string>
+					<string>source.js</string>
 				</dict>
 			</array>
 		</dict>
-		<key>metaConstants</key>
+		<key>keywords</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(on|off)\b</string>
+					<string>\b(_api|_rids|alias|always|and|at|author|authz|between|cachable|cacheable|callbacks|choose|clear|configure|configure|css|current|dataset|datasource|defaction|description|dispatch|domain|else|emit|every|extract|failure|fired|for|foreach|forget|from|function|global|history|if|iframe|key|like|logging|mark|match|meta|module|name|not|notfired|null|on|or|pageview|pre|provide|provides|raise|replace|require|rule|ruleset|schedule|seen|select|set|setting|sharing|success|then|use|using|version|web|when|where|with|within)\b</string>
 					<key>name</key>
-					<string>constant.other.meta.krl</string>
-				</dict>
-			</array>
-		</dict>
-		<key>metaKeywords</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\b(name|author|description|logging|sharing|use|provide|configure|key)\b</string>
-					<key>name</key>
-					<string>keyword.meta.krl</string>
-				</dict>
-			</array>
-		</dict>
-		<key>numericConstant</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string> \d+</string>
-					<key>name</key>
-					<string>constant.numeric.krl</string>
+					<string>keyword.krl</string>
 				</dict>
 			</array>
 		</dict>
@@ -481,49 +167,53 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(with|neq|eq)\b</string>
+					<string>\b(eq|neq|cmp)\b</string>
 					<key>name</key>
 					<string>keyword.operator.krl</string>
 				</dict>
 			</array>
 		</dict>
-		<key>postludeKeywords</key>
+		<key>regex</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(set)\b</string>
+					<string>\bre/.*/[gim]{0,3}</string>
 					<key>name</key>
-					<string>keyword.postlude.krl</string>
+					<string>string.regexp.krl</string>
 				</dict>
 			</array>
 		</dict>
-		<key>quotedString</key>
+		<key>string</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>begin</key>
-					<string>"</string>
-					<key>end</key>
-					<string>"</string>
-					<key>name</key>
-					<string>string.quoted.double.krl</string>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>'</string>
-					<key>end</key>
-					<string>'</string>
+					<key>match</key>
+					<string>'(\\'|[^'])*'</string>
 					<key>name</key>
 					<string>string.quoted.single.krl</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>re/.*/</string>
+					<string>\"(\\"|[^\"])*\"</string>
 					<key>name</key>
-					<string>string.regexp.classic.krl</string>
+					<string>string.quoted.double.krl</string>
+				</dict>
+			</array>
+		</dict>
+		<key>xdi</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>&lt;\[</string>
+					<key>end</key>
+					<string>\]&gt;</string>
+					<key>name</key>
+					<string>source.xdi</string>
 				</dict>
 			</array>
 		</dict>
