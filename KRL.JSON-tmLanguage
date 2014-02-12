@@ -84,6 +84,10 @@
 				{
 					"name": "string.regexp.krl",
 					"match": "\\bre\/.*\/[gim]{0,3}"
+				},
+				{
+					"name": "string.regexp.krl",
+					"match": "\\bre#.*#[gim]{0,3}"
 				}
 			]
 		},

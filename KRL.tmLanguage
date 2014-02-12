@@ -183,6 +183,12 @@
 					<key>name</key>
 					<string>string.regexp.krl</string>
 				</dict>
+				<dict>
+					<key>match</key>
+					<string>\bre#.*#[gim]{0,3}</string>
+					<key>name</key>
+					<string>string.regexp.krl</string>
+				</dict>
 			</array>
 		</dict>
 		<key>string</key>
