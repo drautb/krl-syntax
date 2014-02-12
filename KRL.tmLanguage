@@ -12,43 +12,11 @@
 	<array>
 		<dict>
 			<key>include</key>
-			<string>#comment</string>
+			<string>#global_krl_patterns</string>
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#keywords</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#constants</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#functions</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#operators</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#string</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#regex</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#html</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#js</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#xdi</string>
+			<string>#meta_block</string>
 		</dict>
 	</array>
 	<key>repository</key>
@@ -79,7 +47,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(true|false|on|off|ent|app|page|event)\b</string>
+					<string>\b(true|false|on|off|ent:|app:|page:|event:)\b</string>
 					<key>name</key>
 					<string>constant.language.krl</string>
 				</dict>
@@ -91,15 +59,9 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(JSON|RSS|XML|HTML)\b</string>
+					<string>\b:(JSON|RSS|XML|HTML)\b</string>
 					<key>name</key>
 					<string>constant.language.krl</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string> \d+</string>
-					<key>name</key>
-					<string>constant.numeric.krl</string>
 				</dict>
 			</array>
 		</dict>
@@ -109,7 +71,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(all|any|append|as|avg|capitalize|collect|decode|delete|difference|duplicates|encode|filter|has|head|index|intersection|isnull|join|keys|klog|lc|length|map|max|min|none|notall|once|pairwise|pick|push|put|query|range|reduce|reverse|slice|sort|splice|split|sprintf|substr|sum|tail|trim|typeof|uc|union|unique|values)\b</string>
+					<string>(\.|\s+)\b(all|any|append|as|avg|capitalize|collect|count|decode|delete|difference|duplicates|encode|filter|has|head|index|intersection|isnull|join|keys|klog|lc|length|map|max|min|none|notall|once|pairwise|pick|push|put|query|range|reduce|repeat|reverse|slice|sort|splice|split|sprintf|substr|sum|tail|trim|typeof|uc|union|unique|values)\b</string>
 					<key>name</key>
 					<string>support.function.krl</string>
 				</dict>
@@ -118,6 +80,56 @@
 					<string>\b(notify|watch)\b</string>
 					<key>name</key>
 					<string>support.function.krl</string>
+				</dict>
+			</array>
+		</dict>
+		<key>global_krl_patterns</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#comment</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#keywords</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#constants</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#numeric_constants</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#functions</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#operators</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#regex</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#html</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#js</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#xdi</string>
 				</dict>
 			</array>
 		</dict>
@@ -149,15 +161,113 @@
 				</dict>
 			</array>
 		</dict>
+		<key>key_value_pair</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>\{</string>
+					<key>end</key>
+					<string>\}</string>
+					<key>name</key>
+					<string>meta.key-value.krl</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#string</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#numeric_constants</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
 		<key>keywords</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(_api|_rids|alias|always|and|at|author|authz|between|cachable|cacheable|callbacks|choose|clear|configure|configure|css|current|dataset|datasource|defaction|description|dispatch|domain|else|emit|every|extract|failure|fired|for|foreach|forget|from|function|global|history|if|iframe|key|like|logging|mark|match|meta|module|name|not|notfired|null|on|or|pageview|pre|provide|provides|raise|replace|require|rule|ruleset|schedule|seen|select|set|setting|sharing|success|then|use|using|version|web|when|where|with|within)\b</string>
+					<string>\b(_api|_rids|after|always|and|at|before|between|cachable|cacheable|callbacks|choose|clear|css|current|dataset|datasource|defaction|dispatch|domain|else|emit|every|extract|failure|fired|for|foreach|forget|from|function|global|history|if|iframe|like|mark|match|not|notfired|null|on|or|pageview|pre|raise|replace|rule|ruleset|schedule|seen|select|set|setting|success|then|web|when|where|with|within)\b</string>
 					<key>name</key>
 					<string>keyword.krl</string>
+				</dict>
+			</array>
+		</dict>
+		<key>meta_block</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>\b(meta)\b\s*\{</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.krl</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\}</string>
+					<key>name</key>
+					<string>block.meta.krl</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#global_krl_patterns</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#meta_block_keywords</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#key_value_pair</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>meta_block_keywords</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(authz|require|logging|sharing|use|module|version|alias|configure|using|name|author|description|key|provide|provides)\b</string>
+					<key>name</key>
+					<string>keyword.meta.krl</string>
+				</dict>
+			</array>
+		</dict>
+		<key>numeric_constants</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b\d+\b</string>
+					<key>name</key>
+					<string>constant.numeric.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b\d+\.\d*\b</string>
+					<key>name</key>
+					<string>constant.numeric.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b\.\d+\b</string>
+					<key>name</key>
+					<string>constant.numeric.krl</string>
 				</dict>
 			</array>
 		</dict>

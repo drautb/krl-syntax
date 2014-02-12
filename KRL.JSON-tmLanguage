@@ -6,6 +6,9 @@
 	"uuid": "fc2e9679-a431-4503-a18c-9d4f53a72830",
 
 	"repository": {
+		/**
+		 * BASIC PATTERNS
+		 */
 		"comment": {
 			"patterns": [
 				{
@@ -23,15 +26,23 @@
 			"patterns": [
 				{
 					"name": "keyword.krl",
-					"match": "\\b(_api|_rids|alias|always|and|at|author|authz|between|cachable|cacheable|callbacks|choose|clear|configure|configure|css|current|dataset|datasource|defaction|description|dispatch|domain|else|emit|every|extract|failure|fired|for|foreach|forget|from|function|global|history|if|iframe|key|like|logging|mark|match|meta|module|name|not|notfired|null|on|or|pageview|pre|provide|provides|raise|replace|require|rule|ruleset|schedule|seen|select|set|setting|sharing|success|then|use|using|version|web|when|where|with|within)\\b"
+					"match": "\\b(_api|_rids|after|always|and|at|before|between|cachable|cacheable|callbacks|choose|clear|css|current|dataset|datasource|defaction|dispatch|domain|else|emit|every|extract|failure|fired|for|foreach|forget|from|function|global|history|if|iframe|like|mark|match|not|notfired|null|on|or|pageview|pre|raise|replace|rule|ruleset|schedule|seen|select|set|setting|success|then|web|when|where|with|within)\\b"
                 }
             ]
+		},
+		"meta_block_keywords": {
+			"patterns": [
+				{
+					"name": "keyword.meta.krl",
+					"match": "\\b(authz|require|logging|sharing|use|module|version|alias|configure|using|name|author|description|key|provide|provides)\\b"
+				}
+			]
 		},
 		"constants": {
 			"patterns": [
 				{
 					"name": "constant.language.krl",
-					"match": "\\b(true|false|on|off|ent|app|page|event)\\b"
+					"match": "\\b(true|false|on|off|ent:|app:|page:|event:)\\b"
                 },
 				{
 					"name": "constant.language.krl",
@@ -39,19 +50,31 @@
                 },
 				{
 					"name": "constant.language.krl",
-					"match": "\\b(JSON|RSS|XML|HTML)\\b"
-                },
-				{
-					"name": "constant.numeric.krl",
-					"match": " \\d+"
+					"match": "\\b:(JSON|RSS|XML|HTML)\\b"
                 }
             ]
+		},
+		"numeric_constants": {
+			"patterns": [
+				{
+					"name": "constant.numeric.krl",
+					"match": "\\b\\d+\\b"
+				},
+				{
+					"name": "constant.numeric.krl",
+					"match": "\\b\\d+\\.\\d*\\b"
+				},
+				{
+					"name": "constant.numeric.krl",
+					"match": "\\b\\.\\d+\\b"
+				}
+			]
 		},
 		"functions": {
 			"patterns": [
 				{
 					"name": "support.function.krl",
-					"match": "\\b(all|any|append|as|avg|capitalize|collect|decode|delete|difference|duplicates|encode|filter|has|head|index|intersection|isnull|join|keys|klog|lc|length|map|max|min|none|notall|once|pairwise|pick|push|put|query|range|reduce|reverse|slice|sort|splice|split|sprintf|substr|sum|tail|trim|typeof|uc|union|unique|values)\\b"
+					"match": "(\\.|\\s+)\\b(all|any|append|as|avg|capitalize|collect|count|decode|delete|difference|duplicates|encode|filter|has|head|index|intersection|isnull|join|keys|klog|lc|length|map|max|min|none|notall|once|pairwise|pick|push|put|query|range|reduce|repeat|reverse|slice|sort|splice|split|sprintf|substr|sum|tail|trim|typeof|uc|union|unique|values)\\b"
 				},
 				{
 					"name": "support.function.krl",
@@ -117,39 +140,98 @@
 					"end": "\\]>"
 				}
 			]
+		},
+
+		/**
+		 * COMPONENT PATTERNS
+		 */
+		"global_krl_patterns": {
+			"patterns": [
+				{
+					"include": "#comment"
+				},
+				{
+					"include": "#keywords"
+				},
+				{
+					"include": "#constants"
+				},
+				{
+					"include": "#numeric_constants"
+				},
+				{
+					"include": "#functions"
+				},
+				{
+					"include": "#operators"
+				},
+				{
+					"include": "#string"
+				},
+				{
+					"include": "#regex"
+				},
+				{
+					"include": "#html"
+				},
+				{
+					"include": "#js"
+				},
+				{
+					"include": "#xdi"
+				}
+			]
+		},
+		"key_value_pair": {
+			"patterns": [
+				{
+					"name": "meta.key-value.krl",
+					"begin": "\\{",
+					"patterns": [
+						{
+							"include": "#string"
+						},
+						{
+							"include": "#numeric_constants"
+						}
+					],
+					"end": "\\}"
+				}
+			]
+		},
+		"meta_block": {
+			"patterns": [
+				{
+					"name": "block.meta.krl",
+					"begin": "\\b(meta)\\b\\s*\\{",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.krl"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#global_krl_patterns"
+						},
+						{
+							"include": "#meta_block_keywords"
+						},
+						{
+							"include": "#key_value_pair"
+						}
+					],
+					"end": "\\}"
+				}
+			]
 		}
 	},
 
 	"patterns": [
 		{
-			"include": "#comment"
+			"include": "#global_krl_patterns"
 		},
 		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#constants"
-		},
-		{
-			"include": "#functions"
-		},
-		{
-			"include": "#operators"
-		},
-		{
-			"include": "#string"
-		},
-		{
-			"include": "#regex"
-		},
-		{
-			"include": "#html"
-		},
-		{
-			"include": "#js"
-		},
-		{
-			"include": "#xdi"
+			"include": "#meta_block"
 		}
     ]
 }
