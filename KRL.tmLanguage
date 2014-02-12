@@ -24,7 +24,19 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#functions</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#operators</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#string</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#regex</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -67,15 +79,21 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(all|any|app|append|as|avg|capitalize|collect|decode|delete|difference|duplicates|encode|ent|filter|has|head|index|intersection|isnull|join|keys|klog|lc|length|map|max|min|none|notall|once|pairwise|pick|push|put|query|range|reduce|reverse|slice|sort|splice|split|sprintf|substr|sum|tail|trim|typeof|uc|union|unique|values)\b</string>
+					<string>\b(true|false|on|off|ent|app|page|event)\b</string>
 					<key>name</key>
-					<string>constant.other.krl</string>
+					<string>constant.language.krl</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(true|false|on|off)\b</string>
+					<string>\b(year|month|week|day|hour|minute|second)s?\b</string>
 					<key>name</key>
-					<string>constant.other.krl</string>
+					<string>constant.language.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(JSON|RSS|XML|HTML)\b</string>
+					<key>name</key>
+					<string>constant.language.krl</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -91,9 +109,15 @@
 			<array>
 				<dict>
 					<key>match</key>
+					<string>\b(all|any|append|as|avg|capitalize|collect|decode|delete|difference|duplicates|encode|filter|has|head|index|intersection|isnull|join|keys|klog|lc|length|map|max|min|none|notall|once|pairwise|pick|push|put|query|range|reduce|reverse|slice|sort|splice|split|sprintf|substr|sum|tail|trim|typeof|uc|union|unique|values)\b</string>
+					<key>name</key>
+					<string>support.function.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>\b(notify|watch)\b</string>
 					<key>name</key>
-					<string>meta.function.krl</string>
+					<string>support.function.krl</string>
 				</dict>
 			</array>
 		</dict>
@@ -131,9 +155,33 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(_api|_rids|alias|always|and|at|author|authz|between|cachable|cacheable|callbacks|choose|clear|configure|configure|css|current|defaction|description|dispatch|domain|else|emit|every|extract|failure|fired|for|foreach|forget|function|global|history|if|iframe|key|like|logging|mark|match|meta|module|name|not|notfired|null|on|or|pageview|pre|provide|provides|raise|replace|require|rule|ruleset|schedule|seen|select|set|setting|sharing|success|use|using|version|web|when|where|with|within)\b</string>
+					<string>\b(_api|_rids|alias|always|and|at|author|authz|between|cachable|cacheable|callbacks|choose|clear|configure|configure|css|current|dataset|datasource|defaction|description|dispatch|domain|else|emit|every|extract|failure|fired|for|foreach|forget|from|function|global|history|if|iframe|key|like|logging|mark|match|meta|module|name|not|notfired|null|on|or|pageview|pre|provide|provides|raise|replace|require|rule|ruleset|schedule|seen|select|set|setting|sharing|success|then|use|using|version|web|when|where|with|within)\b</string>
 					<key>name</key>
 					<string>keyword.krl</string>
+				</dict>
+			</array>
+		</dict>
+		<key>operators</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(eq|neq|cmp)\b</string>
+					<key>name</key>
+					<string>keyword.operator.krl</string>
+				</dict>
+			</array>
+		</dict>
+		<key>regex</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\bre/.*/[gim]{0,3}</string>
+					<key>name</key>
+					<string>string.regexp.krl</string>
 				</dict>
 			</array>
 		</dict>

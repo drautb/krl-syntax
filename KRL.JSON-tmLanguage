@@ -23,19 +23,23 @@
 			"patterns": [
 				{
 					"name": "keyword.krl",
-					"match": "\\b(_api|_rids|alias|always|and|at|author|authz|between|cachable|cacheable|callbacks|choose|clear|configure|configure|css|current|defaction|description|dispatch|domain|else|emit|every|extract|failure|fired|for|foreach|forget|function|global|history|if|iframe|key|like|logging|mark|match|meta|module|name|not|notfired|null|on|or|pageview|pre|provide|provides|raise|replace|require|rule|ruleset|schedule|seen|select|set|setting|sharing|success|use|using|version|web|when|where|with|within)\\b"
+					"match": "\\b(_api|_rids|alias|always|and|at|author|authz|between|cachable|cacheable|callbacks|choose|clear|configure|configure|css|current|dataset|datasource|defaction|description|dispatch|domain|else|emit|every|extract|failure|fired|for|foreach|forget|from|function|global|history|if|iframe|key|like|logging|mark|match|meta|module|name|not|notfired|null|on|or|pageview|pre|provide|provides|raise|replace|require|rule|ruleset|schedule|seen|select|set|setting|sharing|success|then|use|using|version|web|when|where|with|within)\\b"
                 }
             ]
 		},
 		"constants": {
 			"patterns": [
 				{
-					"name": "constant.other.krl",
-					"match": "\\b(all|any|app|append|as|avg|capitalize|collect|decode|delete|difference|duplicates|encode|ent|filter|has|head|index|intersection|isnull|join|keys|klog|lc|length|map|max|min|none|notall|once|pairwise|pick|push|put|query|range|reduce|reverse|slice|sort|splice|split|sprintf|substr|sum|tail|trim|typeof|uc|union|unique|values)\\b"
+					"name": "constant.language.krl",
+					"match": "\\b(true|false|on|off|ent|app|page|event)\\b"
                 },
 				{
-					"name": "constant.other.krl",
-					"match": "\\b(true|false|on|off)\\b"
+					"name": "constant.language.krl",
+					"match": "\\b(year|month|week|day|hour|minute|second)s?\\b"
+                },
+				{
+					"name": "constant.language.krl",
+					"match": "\\b(JSON|RSS|XML|HTML)\\b"
                 },
 				{
 					"name": "constant.numeric.krl",
@@ -46,8 +50,20 @@
 		"functions": {
 			"patterns": [
 				{
-					"name": "meta.function.krl",
+					"name": "support.function.krl",
+					"match": "\\b(all|any|append|as|avg|capitalize|collect|decode|delete|difference|duplicates|encode|filter|has|head|index|intersection|isnull|join|keys|klog|lc|length|map|max|min|none|notall|once|pairwise|pick|push|put|query|range|reduce|reverse|slice|sort|splice|split|sprintf|substr|sum|tail|trim|typeof|uc|union|unique|values)\\b"
+				},
+				{
+					"name": "support.function.krl",
 					"match": "\\b(notify|watch)\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.krl",
+					"match": "\\b(eq|neq|cmp)\\b"
 				}
 			]
 		},
@@ -60,6 +76,14 @@
 				{
 					"name": "string.quoted.double.krl",
 					"match": "\\\"(\\\\\"|[^\\\"])*\\\""
+				}
+			]
+		},
+		"regex": {
+			"patterns": [
+				{
+					"name": "string.regexp.krl",
+					"match": "\\bre\/.*\/[gim]{0,3}"
 				}
 			]
 		},
@@ -103,7 +127,16 @@
 			"include": "#constants"
 		},
 		{
+			"include": "#functions"
+		},
+		{
+			"include": "#operators"
+		},
+		{
 			"include": "#string"
+		},
+		{
+			"include": "#regex"
 		},
 		{
 			"include": "#html"
