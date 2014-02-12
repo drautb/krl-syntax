@@ -9,7 +9,36 @@
 	<key>name</key>
 	<string>KRL (Kinetic Rule Language)</string>
 	<key>patterns</key>
-	<array/>
+	<array>
+		<dict>
+			<key>include</key>
+			<string>#comment</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#keywords</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#constants</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#string</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#html</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#js</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#xdi</string>
+		</dict>
+	</array>
 	<key>repository</key>
 	<dict>
 		<key>comment</key>
@@ -24,9 +53,9 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>\\\*</string>
+					<string>/\*</string>
 					<key>end</key>
-					<string>\*\\</string>
+					<string>\*/</string>
 					<key>name</key>
 					<string>comment.multiline.krl</string>
 				</dict>
@@ -44,9 +73,55 @@
 				</dict>
 				<dict>
 					<key>match</key>
+					<string>\b(true|false|on|off)\b</string>
+					<key>name</key>
+					<string>constant.other.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string> \d+</string>
 					<key>name</key>
 					<string>constant.numeric.krl</string>
+				</dict>
+			</array>
+		</dict>
+		<key>functions</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(notify|watch)\b</string>
+					<key>name</key>
+					<string>meta.function.krl</string>
+				</dict>
+			</array>
+		</dict>
+		<key>html</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>&lt;&lt;</string>
+					<key>end</key>
+					<string>&gt;&gt;</string>
+					<key>name</key>
+					<string>string.text.html.basic</string>
+				</dict>
+			</array>
+		</dict>
+		<key>js</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>&lt;\|</string>
+					<key>end</key>
+					<string>\|&gt;</string>
+					<key>name</key>
+					<string>source.js</string>
 				</dict>
 			</array>
 		</dict>
@@ -56,9 +131,41 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(alias|and|at|authz|between|cachable|cacheable|callbacks|choose|clear|configure|css|current|defaction|domain|emit|every|extract|failure|for|foreach|forget|function|global|history|if|iframe|javascript|like|logging|mark|match|meta|module|not|null|on|or|pageview|pre|provide|provides|raise|replace|require|ruleset|schedule|seen|set|setting|sharing|success|use|using|version|web|when|where|with|within)\b</string>
+					<string>\b(_api|_rids|alias|always|and|at|author|authz|between|cachable|cacheable|callbacks|choose|clear|configure|configure|css|current|defaction|description|dispatch|domain|else|emit|every|extract|failure|fired|for|foreach|forget|function|global|history|if|iframe|key|like|logging|mark|match|meta|module|name|not|notfired|null|on|or|pageview|pre|provide|provides|raise|replace|require|rule|ruleset|schedule|seen|select|set|setting|sharing|success|use|using|version|web|when|where|with|within)\b</string>
 					<key>name</key>
 					<string>keyword.krl</string>
+				</dict>
+			</array>
+		</dict>
+		<key>string</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>'(\\'|[^'])*'</string>
+					<key>name</key>
+					<string>string.quoted.single.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\"(\\"|[^\"])*\"</string>
+					<key>name</key>
+					<string>string.quoted.double.krl</string>
+				</dict>
+			</array>
+		</dict>
+		<key>xdi</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>&lt;\[</string>
+					<key>end</key>
+					<string>\]&gt;</string>
+					<key>name</key>
+					<string>source.xdi</string>
 				</dict>
 			</array>
 		</dict>
