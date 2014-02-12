@@ -1,8 +1,6 @@
 krl-syntax
 ==========
 
-Version 0.1.0
-
 [KRL][1] ([Kinetic Rule Language][2]) Syntax Definition for Sublime Text 2/3.
 
 ## Installation
