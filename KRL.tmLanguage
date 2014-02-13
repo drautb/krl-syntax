@@ -65,6 +65,18 @@
 				</dict>
 			</array>
 		</dict>
+		<key>escape_sequences</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\(b|d|t|n|f|r|\"|\'|\\|\.|w|s|\?|\(|\)|-)</string>
+					<key>name</key>
+					<string>constant.character.escape.krl</string>
+				</dict>
+			</array>
+		</dict>
 		<key>functions</key>
 		<dict>
 			<key>patterns</key>
@@ -114,6 +126,10 @@
 				<dict>
 					<key>include</key>
 					<string>#string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#escape_sequences</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -320,16 +336,34 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>match</key>
-					<string>'(\\'|[^'])*'</string>
+					<key>begin</key>
+					<string>'</string>
+					<key>end</key>
+					<string>'</string>
 					<key>name</key>
 					<string>string.quoted.single.krl</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#escape_sequences</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
-					<key>match</key>
-					<string>\"(\\"|[^\"])*\"</string>
+					<key>begin</key>
+					<string>"</string>
+					<key>end</key>
+					<string>"</string>
 					<key>name</key>
 					<string>string.quoted.double.krl</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#escape_sequences</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>

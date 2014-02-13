@@ -70,6 +70,14 @@
 				}
 			]
 		},
+		"escape_sequences": {
+			"patterns": [
+				{
+					"name": "constant.character.escape.krl",
+					"match": "\\\\(b|d|t|n|f|r|\\\"|\\'|\\\\|\\.|w|s|\\?|\\(|\\)|-)"
+				}
+			]
+		},
 		"functions": {
 			"patterns": [
 				{
@@ -94,11 +102,23 @@
 			"patterns": [
 				{
 					"name": "string.quoted.single.krl",
-					"match": "'(\\\\'|[^'])*'"
+					"begin": "'",
+					"patterns": [
+						{
+							"include": "#escape_sequences"
+						}
+					],
+					"end": "'"
 				},
 				{
 					"name": "string.quoted.double.krl",
-					"match": "\\\"(\\\\\"|[^\\\"])*\\\""
+					"begin": "\"",
+					"patterns": [
+						{
+							"include": "#escape_sequences"
+						}
+					],
+					"end": "\""
 				}
 			]
 		},
@@ -177,6 +197,9 @@
 				},
 				{
 					"include": "#string"
+				},
+				{
+					"include": "#escape_sequences"
 				},
 				{
 					"include": "#regex"
