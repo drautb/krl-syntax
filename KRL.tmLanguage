@@ -143,7 +143,14 @@
 					<key>end</key>
 					<string>&gt;&gt;</string>
 					<key>name</key>
-					<string>string.text.html.basic</string>
+					<string>html.krl</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>text.html.basic</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -158,6 +165,13 @@
 					<string>\|&gt;</string>
 					<key>name</key>
 					<string>source.js</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>source.js</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>

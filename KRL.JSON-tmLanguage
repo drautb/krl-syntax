@@ -117,8 +117,13 @@
 		"html": {
 			"patterns": [
 				{
-					"name": "string.text.html.basic",
+					"name": "html.krl",
 					"begin": "<<",
+					"patterns": [
+						{
+							"include": "text.html.basic"
+						}
+					],
 					"end": ">>"
 				}
 			]
@@ -128,6 +133,11 @@
 				{
 					"name": "source.js",
 					"begin": "<\\|",
+					"patterns": [
+						{
+							"include": "source.js"
+						}
+					],
 					"end": "\\|>"
 				}
 			]
