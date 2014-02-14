@@ -83,15 +83,13 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(\.|\s+)\b(all|any|append|as|avg|capitalize|collect|count|decode|delete|difference|duplicates|encode|filter|has|head|index|intersection|isnull|join|keys|klog|lc|length|map|max|min|none|notall|once|pairwise|pick|push|put|query|range|reduce|repeat|reverse|slice|sort|splice|split|sprintf|substr|sum|tail|trim|typeof|uc|union|unique|values)\b</string>
+					<string>\b(all|any|as|avg|capitalize|collect|count|decode|delete|difference|duplicates|encode|filter|has|head|index|intersection|isnull|join|keys|klog|lc|length|map|max|min|none|notall|once|pairwise|pick|push|put|query|range|reduce|repeat|reverse|slice|sort|splice|split|sprintf|substr|sum|tail|trim|typeof|uc|union|unique|values)\b</string>
 					<key>name</key>
 					<string>support.function.krl</string>
 				</dict>
 				<dict>
-					<key>match</key>
-					<string>\b(notify|watch)\b</string>
-					<key>name</key>
-					<string>support.function.krl</string>
+					<key>include</key>
+					<string>#web_action_functions</string>
 				</dict>
 			</array>
 		</dict>
@@ -222,7 +220,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(_api|_rids|after|always|and|at|before|between|cachable|cacheable|callbacks|choose|clear|css|current|dataset|datasource|defaction|dispatch|domain|else|emit|every|extract|failure|fired|for|foreach|forget|from|function|global|history|if|iframe|like|mark|match|not|notfired|null|on|or|pageview|pre|raise|replace|rule|ruleset|schedule|seen|select|set|setting|success|then|web|when|where|with|within)\b</string>
+					<string>\b(_api|_rids|after|always|and|at|before|between|cachable|cacheable|callbacks|choose|clear|css|current|dataset|datasource|defaction|dispatch|domain|else|emit|every|extract|failure|fired|for|foreach|forget|from|function|global|history|if|iframe|like|mark|match|not|notfired|null|on|or|pageview|pre|raise|replace|rule|ruleset|schedule|seen|select|set|setting|success|then|web|when|where|with|within)\b\s+</string>
 					<key>name</key>
 					<string>keyword.krl</string>
 				</dict>
@@ -364,6 +362,18 @@
 							<string>#escape_sequences</string>
 						</dict>
 					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>web_action_functions</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(after|alert|annotate|append|before|close_notification|content_changed|emit|float_html|float|move_after|move_to_top|noop|notify|percolate|popup|prepend|redirect|replace|replace_html|replace_image_src|replace_inner|send_directive|set_element_attr|sidetab|watch)\b</string>
+					<key>name</key>
+					<string>support.function.krl</string>
 				</dict>
 			</array>
 		</dict>
