@@ -184,6 +184,12 @@
 							<key>include</key>
 							<string>text.html.basic</string>
 						</dict>
+						<dict>
+							<key>match</key>
+							<string>#{[^{^}]*}</string>
+							<key>name</key>
+							<string>string.beesting.krl</string>
+						</dict>
 					</array>
 				</dict>
 			</array>
