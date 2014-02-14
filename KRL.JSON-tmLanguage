@@ -30,7 +30,11 @@
 				},
 				{
 					"name": "keyword.krl",
-					"match": "\\s+\\b(_api|_rids|after|always|and|at|before|between|cachable|cacheable|callbacks|choose|clear|count|css|current|dataset|datasource|defaction|dispatch|domain|else|emit|every|failure|fired|for|foreach|forget|from|function|global|history|if|iframe|like|mark|match|not|notfired|null|on|or|pageview|pre|raise|repeat|replace(?!\\()|rule|schedule|seen|select|set|setting|success|then|web|when|where|with|within)\\b"
+					"match": "\\s+\\b(_api|_rids|after|always|and|at|before|between|cachable|cacheable|callbacks|choose|clear|css|current|dataset|datasource|defaction|dispatch|domain|else|emit|every|failure|fired|for|foreach|forget|from|function|global|history|if|iframe|like|mark|match|not|notfired|null|on|or|pageview|pre|raise|replace(?!\\()|rule|schedule|seen|select|set|setting|success|then|web|when|where|with|within)\\b"
+                },
+				{
+					"name": "keyword.krl",
+					"match": "\\b(count|repeat)\\b(?=\\s+[0-9]+)"
                 }
             ]
 		},

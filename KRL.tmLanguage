@@ -246,7 +246,13 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\s+\b(_api|_rids|after|always|and|at|before|between|cachable|cacheable|callbacks|choose|clear|count|css|current|dataset|datasource|defaction|dispatch|domain|else|emit|every|failure|fired|for|foreach|forget|from|function|global|history|if|iframe|like|mark|match|not|notfired|null|on|or|pageview|pre|raise|repeat|replace(?!\()|rule|schedule|seen|select|set|setting|success|then|web|when|where|with|within)\b</string>
+					<string>\s+\b(_api|_rids|after|always|and|at|before|between|cachable|cacheable|callbacks|choose|clear|css|current|dataset|datasource|defaction|dispatch|domain|else|emit|every|failure|fired|for|foreach|forget|from|function|global|history|if|iframe|like|mark|match|not|notfired|null|on|or|pageview|pre|raise|replace(?!\()|rule|schedule|seen|select|set|setting|success|then|web|when|where|with|within)\b</string>
+					<key>name</key>
+					<string>keyword.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(count|repeat)\b(?=\s+[0-9]+)</string>
 					<key>name</key>
 					<string>keyword.krl</string>
 				</dict>
