@@ -94,8 +94,22 @@
 					<string>support.function.krl</string>
 				</dict>
 				<dict>
-					<key>include</key>
-					<string>#web_action_functions</string>
+					<key>match</key>
+					<string>\s+\b(after|alert|annotate|append|before|close_notification|content_changed|emit|float_html|float|move_after|move_to_top|noop|notify|percolate|popup|prepend|redirect|replace|replace_html|replace_image_src|replace_inner|send_directive|set_element_attr|sidetab|watch)\b(?=\()</string>
+					<key>name</key>
+					<string>support.function.web_action.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;=page:)(env|url)(?=\()</string>
+					<key>name</key>
+					<string>support.function.page.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;=event:)(env|domain|type|name|attr|attrs|channel|send|get_list|delete|get_history)(?=\()</string>
+					<key>name</key>
+					<string>support.function.event.krl</string>
 				</dict>
 			</array>
 		</dict>
@@ -374,18 +388,6 @@
 							<string>#escape_sequences</string>
 						</dict>
 					</array>
-				</dict>
-			</array>
-		</dict>
-		<key>web_action_functions</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\s+\b(after|alert|annotate|append|before|close_notification|content_changed|emit|float_html|float|move_after|move_to_top|noop|notify|percolate|popup|prepend|redirect|replace|replace_html|replace_image_src|replace_inner|send_directive|set_element_attr|sidetab|watch)\b(?=\()</string>
-					<key>name</key>
-					<string>support.function.krl</string>
 				</dict>
 			</array>
 		</dict>

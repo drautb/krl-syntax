@@ -86,14 +86,6 @@
 				}
 			]
 		},
-		"web_action_functions": {
-			"patterns": [
-				{
-					"name": "support.function.krl",
-					"match": "\\s+\\b(after|alert|annotate|append|before|close_notification|content_changed|emit|float_html|float|move_after|move_to_top|noop|notify|percolate|popup|prepend|redirect|replace|replace_html|replace_image_src|replace_inner|send_directive|set_element_attr|sidetab|watch)\\b(?=\\()"
-				}
-			]
-		},
 		"functions": {
 			"patterns": [
 				{
@@ -101,7 +93,16 @@
 					"match": "\\b(all|any|as|avg|capitalize|collect|decode|delete|difference|duplicates|encode|extract|filter|has|head|index|intersection|isnull|join|keys|klog|lc|length|map|max|min|none|notall|once|pairwise|pick|push|put|query|range|reduce|reverse|slice|sort|splice|split|sprintf|substr|sum|tail|trim|typeof|uc|union|unique|values)\\b"
 				},
 				{
-					"include": "#web_action_functions"
+					"name": "support.function.web_action.krl",
+					"match": "\\s+\\b(after|alert|annotate|append|before|close_notification|content_changed|emit|float_html|float|move_after|move_to_top|noop|notify|percolate|popup|prepend|redirect|replace|replace_html|replace_image_src|replace_inner|send_directive|set_element_attr|sidetab|watch)\\b(?=\\()"
+				},
+				{
+					"name": "support.function.page.krl",
+					"match": "\\b(?<=page:)(env|url)(?=\\()"
+				},
+				{
+					"name": "support.function.event.krl",
+					"match": "\\b(?<=event:)(env|domain|type|name|attr|attrs|channel|send|get_list|delete|get_history)(?=\\()"
 				}
 			]
 		},
