@@ -27,7 +27,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>//.*\n</string>
+					<string>//.*</string>
 					<key>name</key>
 					<string>comment.line.krl</string>
 				</dict>
@@ -47,7 +47,13 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(true|false|on|off|ent:|app:|page:|event:)\b</string>
+					<string>\b(true|false|on|off|page:|event:)\b</string>
+					<key>name</key>
+					<string>constant.language.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(ent:|app:)\b</string>
 					<key>name</key>
 					<string>constant.language.krl</string>
 				</dict>
@@ -83,7 +89,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(all|any|as|avg|capitalize|collect|count|decode|delete|difference|duplicates|encode|filter|has|head|index|intersection|isnull|join|keys|klog|lc|length|map|max|min|none|notall|once|pairwise|pick|push|put|query|range|reduce|repeat|reverse|slice|sort|splice|split|sprintf|substr|sum|tail|trim|typeof|uc|union|unique|values)\b</string>
+					<string>\b(all|any|as|avg|capitalize|collect|decode|delete|difference|duplicates|encode|extract|filter|has|head|index|intersection|isnull|join|keys|klog|lc|length|map|max|min|none|notall|once|pairwise|pick|push|put|query|range|reduce|reverse|slice|sort|splice|split|sprintf|substr|sum|tail|trim|typeof|uc|union|unique|values)\b</string>
 					<key>name</key>
 					<string>support.function.krl</string>
 				</dict>
@@ -220,7 +226,13 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(_api|_rids|after|always|and|at|before|between|cachable|cacheable|callbacks|choose|clear|css|current|dataset|datasource|defaction|dispatch|domain|else|emit|every|extract|failure|fired|for|foreach|forget|from|function|global|history|if|iframe|like|mark|match|not|notfired|null|on|or|pageview|pre|raise|replace|rule|ruleset|schedule|seen|select|set|setting|success|then|web|when|where|with|within)\b\s+</string>
+					<string>\bruleset\b</string>
+					<key>name</key>
+					<string>keyword.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\s+\b(_api|_rids|after|always|and|at|before|between|cachable|cacheable|callbacks|choose|clear|count|css|current|dataset|datasource|defaction|dispatch|domain|else|emit|every|failure|fired|for|foreach|forget|from|function|global|history|if|iframe|like|mark|match|not|notfired|null|on|or|pageview|pre|raise|repeat|replace(?!\()|rule|schedule|seen|select|set|setting|success|then|web|when|where|with|within)\b</string>
 					<key>name</key>
 					<string>keyword.krl</string>
 				</dict>
@@ -293,7 +305,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b\.\d+\b</string>
+					<string>\.\d+\b</string>
 					<key>name</key>
 					<string>constant.numeric.krl</string>
 				</dict>
@@ -371,7 +383,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(after|alert|annotate|append|before|close_notification|content_changed|emit|float_html|float|move_after|move_to_top|noop|notify|percolate|popup|prepend|redirect|replace|replace_html|replace_image_src|replace_inner|send_directive|set_element_attr|sidetab|watch)\b</string>
+					<string>\s+\b(after|alert|annotate|append|before|close_notification|content_changed|emit|float_html|float|move_after|move_to_top|noop|notify|percolate|popup|prepend|redirect|replace|replace_html|replace_image_src|replace_inner|send_directive|set_element_attr|sidetab|watch)\b(?=\()</string>
 					<key>name</key>
 					<string>support.function.krl</string>
 				</dict>
