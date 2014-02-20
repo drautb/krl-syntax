@@ -59,7 +59,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta):\b</string>
+					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule):\b</string>
 					<key>name</key>
 					<string>constant.language.library.krl</string>
 				</dict>
@@ -170,6 +170,12 @@
 					<string>\b(?&lt;=meta:)(rid|version|callingRID|callingVersion|moduleRID|moduleVersion|inModule|host|rulesetName|rulesetAuthor|rulesetDescription|ruleName|eci)(?=\()</string>
 					<key>name</key>
 					<string>support.function.meta.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;=oauthmodule:)(has_token|post|put|get|head|delete|patch|get_auth_url)(?=\()</string>
+					<key>name</key>
+					<string>support.function.oauthmodule.krl</string>
 				</dict>
 			</array>
 		</dict>
