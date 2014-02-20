@@ -58,7 +58,7 @@
                 },
 				{
 					"name": "constant.language.library.krl",
-					"match": "\\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule):\\b"
+					"match": "\\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci):\\b"
                 },
 				{
 					"name": "constant.language.krl",
@@ -151,6 +151,10 @@
 				{
 					"name": "support.function.oauthmodule.krl",
 					"match": "\\b(?<=oauthmodule:)(has_token|post|put|get|head|delete|patch|get_auth_url)(?=\\()"
+				},
+				{
+					"name": "support.function.pci.krl",
+					"match": "\\b(?<=pci:)(new_cloud|delete_cloud|auth|exists|set_password|reset_password|get_username|get_email|list_children|list_parent|set_parent|new_ruleset|delete_ruleset|list_ruleset|new_eci|delete_eci|list_eci|get_eci_attributes|set_eci_attributes|get_eci_policy|set_eci_policy|session_token|create_developer_key|set_permissions|clear_permissions|get_permissions|add_callback|remove_callback|list_callback|add_bootstrap|remove_bootstrap|list_bootstrap|add_appinfo|get_appinfo|remove_appinfo|cloudnumber|set_logging|get_logging|clear_logging|get_logs)(?=\\()"
 				}
 			]
 		},
