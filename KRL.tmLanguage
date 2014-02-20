@@ -59,7 +59,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google):\b</string>
+					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math):\b</string>
 					<key>name</key>
 					<string>constant.language.library.krl</string>
 				</dict>
@@ -158,6 +158,12 @@
 					<string>\b(?&lt;=google:)(authorize|authorized|get)(?=\()</string>
 					<key>name</key>
 					<string>support.function.google.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;=math:)(random|pi|exp|int|abs|log|sqrt|power|ceiling|floor|round|deg2rad|grad2rad|rad2deg|grad2deg|deg2grad|rad2grad|md5|sha1|hmac_sha1|hmac_sha1_hex|hmac_sha1_base64|hmac_sha256|hmac_sha256_hex|hmac_sha256_base64|tan|sin|cos|cot|sec|csc|atan|asin|acos|acot|asec|acsc|tanh|sinh|cosh|coth|sech|csch|atanh|asinh|acosh|acoth|asech|acsch|great_circle_distance|great_circle_direction|great_circle_midpoint|great_circle_midpoint|great_circle_waypoint)(?=\()</string>
+					<key>name</key>
+					<string>support.function.math.krl</string>
 				</dict>
 			</array>
 		</dict>
