@@ -59,7 +59,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(page|event|http|time|location):\b</string>
+					<string>\b(page|event|http|time|location|twitter):\b</string>
 					<key>name</key>
 					<string>constant.language.library.krl</string>
 				</dict>
@@ -134,6 +134,12 @@
 					<string>\b(?&lt;=location:)(country_code|country_name|region|city|postal_code|latitude|longitude|dma_code|area_code)(?=\()</string>
 					<key>name</key>
 					<string>support.function.location.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;=twitter:)(authorize|authorized|update|friends_timeline|blocking|blocking_ids|favorites|followers_ids|friends_ids|friends_timeline|home_timeline|friendship_exists|mentions|public_timeline|rate_limit_status|retweeted_by_me|retweeted_of_me|retweeted_to_me|retweets|saved_searches|sent_direct_messages|show_friendship|show_saved_search|show_status|show_user|trends_available|trends_location|user_timeline|users_search|trends_daily|trends_weekly)(?=\()</string>
+					<key>name</key>
+					<string>support.function.twitter.krl</string>
 				</dict>
 			</array>
 		</dict>
