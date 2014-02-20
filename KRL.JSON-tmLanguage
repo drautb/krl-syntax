@@ -58,7 +58,7 @@
                 },
 				{
 					"name": "constant.language.library.krl",
-					"match": "\\b(page|event|http|time|location|twitter|facebook|amazon):\\b"
+					"match": "\\b(page|event|http|time|location|twitter|facebook|amazon|google):\\b"
                 },
 				{
 					"name": "constant.language.krl",
@@ -110,7 +110,7 @@
 				},
 				{
 					"name": "support.function.event.krl",
-					"match": "\\b(?<=event:)(env|domain|type|name|attr|attrs|channel|send|get_list|delete|get_history)(?=\\()"
+					"match": "\\b(?<=event:)(env|domain|type|name|attr|attrs|channel|send|get_list|delete|get_history|param)(?=\\()"
 				},
 				{
 					"name": "support.function.http.rkl",
@@ -135,6 +135,10 @@
 				{
 					"name": "support.function.amazon.krl",
 					"match": "\\b(?<=amazon:)(item_search|item_lookup)(?=\\()"
+				},
+				{
+					"name": "support.function.google.krl",
+					"match": "\\b(?<=google:)(authorize|authorized|get)(?=\\()"
 				}
 			]
 		},

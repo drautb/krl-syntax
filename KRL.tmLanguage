@@ -59,7 +59,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(page|event|http|time|location|twitter|facebook|amazon):\b</string>
+					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google):\b</string>
 					<key>name</key>
 					<string>constant.language.library.krl</string>
 				</dict>
@@ -113,7 +113,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(?&lt;=event:)(env|domain|type|name|attr|attrs|channel|send|get_list|delete|get_history)(?=\()</string>
+					<string>\b(?&lt;=event:)(env|domain|type|name|attr|attrs|channel|send|get_list|delete|get_history|param)(?=\()</string>
 					<key>name</key>
 					<string>support.function.event.krl</string>
 				</dict>
@@ -152,6 +152,12 @@
 					<string>\b(?&lt;=amazon:)(item_search|item_lookup)(?=\()</string>
 					<key>name</key>
 					<string>support.function.amazon.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;=google:)(authorize|authorized|get)(?=\()</string>
+					<key>name</key>
+					<string>support.function.google.krl</string>
 				</dict>
 			</array>
 		</dict>
