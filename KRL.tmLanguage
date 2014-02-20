@@ -59,7 +59,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm|rss|this2that|twilio|uri|useragent|weather):\b</string>
+					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm|rss|this2that|twilio|uri|useragent|weather|xdi):\b</string>
 					<key>name</key>
 					<string>constant.language.library.krl</string>
 				</dict>
@@ -236,6 +236,12 @@
 					<string>\b(?&lt;=weather:)(curr_temp|curr_cond|curr_cond_code|tomorrow_low|tomorrow_high|tomorrow_cond|tomorrow_cond_code|warmer_than|colder_than|tomorrow_cond|today_showers|tomorrow_showers|today_cloudy|today_snow|tomorrow_snow|tomorrow_cloudy|today_windy|tomorrow_windy|today_sunny|tomorrow_sunny)(?=\()</string>
 					<key>name</key>
 					<string>support.function.weather.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;=xdi:)(has_account|create_new_graph|flush_xdi|iname|inumber|lookup|global_definitions|local_definitions|add|get|mod|del|tuple|tuples|properties|equivalents|all_literals|literal|set_link_contract)(?=\()</string>
+					<key>name</key>
+					<string>support.function.xdi.krl</string>
 				</dict>
 			</array>
 		</dict>
