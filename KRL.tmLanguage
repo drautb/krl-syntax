@@ -59,7 +59,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm|rss):\b</string>
+					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm|rss|this2that):\b</string>
 					<key>name</key>
 					<string>constant.language.library.krl</string>
 				</dict>
@@ -206,6 +206,12 @@
 					<string>\b(?&lt;=rss:)(version|items|first|last|index|random|channel|item)(?=\()</string>
 					<key>name</key>
 					<string>support.function.rss.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;=this2that:)(transform|xml2json|chr|ord|pack|unpack|string2base64|base642string|url2base64|base642url)(?=\()</string>
+					<key>name</key>
+					<string>support.function.this2that.krl</string>
 				</dict>
 			</array>
 		</dict>
