@@ -59,7 +59,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm|rss|this2that|twilio):\b</string>
+					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm|rss|this2that|twilio|uri):\b</string>
 					<key>name</key>
 					<string>constant.language.library.krl</string>
 				</dict>
@@ -218,6 +218,12 @@
 					<string>\b(?&lt;=twilio:)(say|play|gather_start|gather_stop|record|sms|dial|dial_conference|dial_start|number|dial_stop|hangup|redirect|reject|pause|raw-response)(?=\()</string>
 					<key>name</key>
 					<string>support.function.twilio.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;=uri:)(escape|unescape)(?=\()</string>
+					<key>name</key>
+					<string>support.function.uri.krl</string>
 				</dict>
 			</array>
 		</dict>
