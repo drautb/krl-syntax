@@ -47,7 +47,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(true|false|on|off|page:|event:)\b</string>
+					<string>\b(true|false|on|off)\b</string>
 					<key>name</key>
 					<string>constant.language.krl</string>
 				</dict>
@@ -56,6 +56,12 @@
 					<string>\b(ent:|app:)\b</string>
 					<key>name</key>
 					<string>constant.language.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(page|event|http):\b</string>
+					<key>name</key>
+					<string>constant.language.library.krl</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -110,6 +116,12 @@
 					<string>\b(?&lt;=event:)(env|domain|type|name|attr|attrs|channel|send|get_list|delete|get_history)(?=\()</string>
 					<key>name</key>
 					<string>support.function.event.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;=http:)(post|get|put|delete|patch|head)(?=\()</string>
+					<key>name</key>
+					<string>support.function.http.rkl</string>
 				</dict>
 			</array>
 		</dict>

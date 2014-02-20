@@ -50,11 +50,15 @@
 			"patterns": [
 				{
 					"name": "constant.language.krl",
-					"match": "\\b(true|false|on|off|page:|event:)\\b"
+					"match": "\\b(true|false|on|off)\\b"
                 },
 				{
 					"name": "constant.language.krl",
 					"match": "\\b(ent:|app:)\\b"
+                },
+				{
+					"name": "constant.language.library.krl",
+					"match": "\\b(page|event|http):\\b"
                 },
 				{
 					"name": "constant.language.krl",
@@ -107,6 +111,10 @@
 				{
 					"name": "support.function.event.krl",
 					"match": "\\b(?<=event:)(env|domain|type|name|attr|attrs|channel|send|get_list|delete|get_history)(?=\\()"
+				},
+				{
+					"name": "support.function.http.rkl",
+					"match": "\\b(?<=http:)(post|get|put|delete|patch|head)(?=\\()"
 				}
 			]
 		},
