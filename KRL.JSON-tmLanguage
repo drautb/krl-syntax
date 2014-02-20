@@ -58,7 +58,7 @@
                 },
 				{
 					"name": "constant.language.library.krl",
-					"match": "\\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm|rss|this2that|twilio|uri):\\b"
+					"match": "\\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm|rss|this2that|twilio|uri|useragent):\\b"
                 },
 				{
 					"name": "constant.language.krl",
@@ -183,6 +183,10 @@
 				{
 					"name": "support.function.uri.krl",
 					"match": "\\b(?<=uri:)(escape|unescape)(?=\\()"
+				},
+				{
+					"name": "support.function.useragent.krl",
+					"match": "\\b(?<=useragent:)(language|language_code|browser_name|browser_version|browser_version_major|browse_version_minor|os|os_type|os_version)(?=\\()"
 				}
 			]
 		},

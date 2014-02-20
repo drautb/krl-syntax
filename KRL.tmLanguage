@@ -59,7 +59,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm|rss|this2that|twilio|uri):\b</string>
+					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm|rss|this2that|twilio|uri|useragent):\b</string>
 					<key>name</key>
 					<string>constant.language.library.krl</string>
 				</dict>
@@ -224,6 +224,12 @@
 					<string>\b(?&lt;=uri:)(escape|unescape)(?=\()</string>
 					<key>name</key>
 					<string>support.function.uri.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;=useragent:)(language|language_code|browser_name|browser_version|browser_version_major|browse_version_minor|os|os_type|os_version)(?=\()</string>
+					<key>name</key>
+					<string>support.function.useragent.krl</string>
 				</dict>
 			</array>
 		</dict>
