@@ -58,7 +58,7 @@
                 },
 				{
 					"name": "constant.language.library.krl",
-					"match": "\\b(page|event|http|time):\\b"
+					"match": "\\b(page|event|http|time|location):\\b"
                 },
 				{
 					"name": "constant.language.krl",
@@ -119,6 +119,10 @@
 				{
 					"name": "support.function.time.krl",
 					"match": "\\b(?<=time:)(now|new|add|strftime|atom|compare|timezone|daytime|nighttime|morning|afternoon|evening|night|lunch_time|late_morning|early_afternoon|late_afternoon|time_between|date_between|date_start|day_of_week|today_is|weekday|weekend)(?=\\()"
+				},
+				{
+					"name": "support.function.location.krl",
+					"match": "\\b(?<=location:)(country_code|country_name|region|city|postal_code|latitude|longitude|dma_code|area_code)(?=\\()"
 				}
 			]
 		},

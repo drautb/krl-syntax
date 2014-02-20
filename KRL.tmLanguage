@@ -59,7 +59,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(page|event|http|time):\b</string>
+					<string>\b(page|event|http|time|location):\b</string>
 					<key>name</key>
 					<string>constant.language.library.krl</string>
 				</dict>
@@ -128,6 +128,12 @@
 					<string>\b(?&lt;=time:)(now|new|add|strftime|atom|compare|timezone|daytime|nighttime|morning|afternoon|evening|night|lunch_time|late_morning|early_afternoon|late_afternoon|time_between|date_between|date_start|day_of_week|today_is|weekday|weekend)(?=\()</string>
 					<key>name</key>
 					<string>support.function.time.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;=location:)(country_code|country_name|region|city|postal_code|latitude|longitude|dma_code|area_code)(?=\()</string>
+					<key>name</key>
+					<string>support.function.location.krl</string>
 				</dict>
 			</array>
 		</dict>
