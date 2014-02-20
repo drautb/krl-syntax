@@ -59,7 +59,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer):\b</string>
+					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm):\b</string>
 					<key>name</key>
 					<string>constant.language.library.krl</string>
 				</dict>
@@ -194,6 +194,12 @@
 					<string>\b(?&lt;=referer:)(search_engine_referer|search_terms|referer_domain|remote_referer|local_referer)(?=\()</string>
 					<key>name</key>
 					<string>support.function.referer.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;=rsm:)(entity_keys|app_keys|new_ruleset|list_rulesets|get_ruleset|is_owner|register|flush|validate|update|fork|create|delete|import|is_valid)(?=\()</string>
+					<key>name</key>
+					<string>support.function.rsm.krl</string>
 				</dict>
 			</array>
 		</dict>

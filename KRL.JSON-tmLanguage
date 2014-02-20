@@ -58,7 +58,7 @@
                 },
 				{
 					"name": "constant.language.library.krl",
-					"match": "\\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer):\\b"
+					"match": "\\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm):\\b"
                 },
 				{
 					"name": "constant.language.krl",
@@ -163,6 +163,10 @@
 				{
 					"name": "support.function.referer.krl",
 					"match": "\\b(?<=referer:)(search_engine_referer|search_terms|referer_domain|remote_referer|local_referer)(?=\\()"
+				},
+				{
+					"name": "support.function.rsm.krl",
+					"match": "\\b(?<=rsm:)(entity_keys|app_keys|new_ruleset|list_rulesets|get_ruleset|is_owner|register|flush|validate|update|fork|create|delete|import|is_valid)(?=\\()"
 				}
 			]
 		},
