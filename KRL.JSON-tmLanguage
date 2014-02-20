@@ -58,7 +58,7 @@
                 },
 				{
 					"name": "constant.language.library.krl",
-					"match": "\\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm):\\b"
+					"match": "\\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm|rss):\\b"
                 },
 				{
 					"name": "constant.language.krl",
@@ -167,6 +167,10 @@
 				{
 					"name": "support.function.rsm.krl",
 					"match": "\\b(?<=rsm:)(entity_keys|app_keys|new_ruleset|list_rulesets|get_ruleset|is_owner|register|flush|validate|update|fork|create|delete|import|is_valid)(?=\\()"
+				},
+				{
+					"name": "support.function.rss.krl",
+					"match": "\\b(?<=rss:)(version|items|first|last|index|random|channel|item)(?=\\()"
 				}
 			]
 		},

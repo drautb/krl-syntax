@@ -59,7 +59,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm):\b</string>
+					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm|rss):\b</string>
 					<key>name</key>
 					<string>constant.language.library.krl</string>
 				</dict>
@@ -200,6 +200,12 @@
 					<string>\b(?&lt;=rsm:)(entity_keys|app_keys|new_ruleset|list_rulesets|get_ruleset|is_owner|register|flush|validate|update|fork|create|delete|import|is_valid)(?=\()</string>
 					<key>name</key>
 					<string>support.function.rsm.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;=rss:)(version|items|first|last|index|random|channel|item)(?=\()</string>
+					<key>name</key>
+					<string>support.function.rss.krl</string>
 				</dict>
 			</array>
 		</dict>
