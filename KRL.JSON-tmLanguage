@@ -58,7 +58,7 @@
                 },
 				{
 					"name": "constant.language.library.krl",
-					"match": "\\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm|rss|this2that):\\b"
+					"match": "\\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer|rsm|rss|this2that|twilio):\\b"
                 },
 				{
 					"name": "constant.language.krl",
@@ -175,6 +175,10 @@
 				{
 					"name": "support.function.this2that.krl",
 					"match": "\\b(?<=this2that:)(transform|xml2json|chr|ord|pack|unpack|string2base64|base642string|url2base64|base642url)(?=\\()"
+				},
+				{
+					"name": "support.function.twilio.krl",
+					"match": "\\b(?<=twilio:)(say|play|gather_start|gather_stop|record|sms|dial|dial_conference|dial_start|number|dial_stop|hangup|redirect|reject|pause|raw-response)(?=\\()"
 				}
 			]
 		},
