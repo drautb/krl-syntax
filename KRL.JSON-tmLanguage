@@ -58,7 +58,7 @@
                 },
 				{
 					"name": "constant.language.library.krl",
-					"match": "\\b(page|event|http|time|location|twitter|facebook):\\b"
+					"match": "\\b(page|event|http|time|location|twitter|facebook|amazon):\\b"
                 },
 				{
 					"name": "constant.language.krl",
@@ -131,6 +131,10 @@
 				{
 					"name": "support.function.facebook.krl",
 					"match": "\\b(?<=facebook:)(authorize|authorized|metadata|picture|search|get|ids)(?=\\()"
+				},
+				{
+					"name": "support.function.amazon.krl",
+					"match": "\\b(?<=amazon:)(item_search|item_lookup)(?=\\()"
 				}
 			]
 		},
