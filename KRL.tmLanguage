@@ -59,7 +59,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random):\b</string>
+					<string>\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer):\b</string>
 					<key>name</key>
 					<string>constant.language.library.krl</string>
 				</dict>
@@ -188,6 +188,12 @@
 					<string>\b(?&lt;=random:)(word|quote|photo|uuid)(?=\()</string>
 					<key>name</key>
 					<string>support.function.random.krl</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(?&lt;=referer:)(search_engine_referer|search_terms|referer_domain|remote_referer|local_referer)(?=\()</string>
+					<key>name</key>
+					<string>support.function.referer.krl</string>
 				</dict>
 			</array>
 		</dict>

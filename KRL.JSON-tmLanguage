@@ -58,7 +58,7 @@
                 },
 				{
 					"name": "constant.language.library.krl",
-					"match": "\\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random):\\b"
+					"match": "\\b(page|event|http|time|location|twitter|facebook|amazon|google|math|meta|oauthmodule|pci|random|referer):\\b"
                 },
 				{
 					"name": "constant.language.krl",
@@ -159,6 +159,10 @@
 				{
 					"name": "support.function.random.krl",
 					"match": "\\b(?<=random:)(word|quote|photo|uuid)(?=\\()"
+				},
+				{
+					"name": "support.function.referer.krl",
+					"match": "\\b(?<=referer:)(search_engine_referer|search_terms|referer_domain|remote_referer|local_referer)(?=\\()"
 				}
 			]
 		},
