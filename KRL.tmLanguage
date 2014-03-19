@@ -215,7 +215,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(?&lt;=twilio:)(say|play|gather_start|gather_stop|record|sms|dial|dial_conference|dial_start|number|dial_stop|hangup|redirect|reject|pause|raw-response)(?=\()</string>
+					<string>\b(?&lt;=twilio:)(say|play|gather_start|gather_stop|record|send_sms|sms|dial|dial_conference|dial_start|number|dial_stop|hangup|redirect|reject|pause|raw-response)(?=\()</string>
 					<key>name</key>
 					<string>support.function.twilio.krl</string>
 				</dict>

@@ -178,7 +178,7 @@
 				},
 				{
 					"name": "support.function.twilio.krl",
-					"match": "\\b(?<=twilio:)(say|play|gather_start|gather_stop|record|sms|dial|dial_conference|dial_start|number|dial_stop|hangup|redirect|reject|pause|raw-response)(?=\\()"
+					"match": "\\b(?<=twilio:)(say|play|gather_start|gather_stop|record|send_sms|sms|dial|dial_conference|dial_start|number|dial_stop|hangup|redirect|reject|pause|raw-response)(?=\\()"
 				},
 				{
 					"name": "support.function.uri.krl",
